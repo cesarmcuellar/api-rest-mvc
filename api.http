@@ -1,0 +1,41 @@
+## recuperar todas las peliculas
+
+get http://localhost:1234/movies
+
+### crear una nueva pelicula
+
+post http://localhost:1234/movies
+Content-Type: application/json
+
+{
+    "id": "dcdd0fad-a94c-4810-8acc-5f108d3b18c3",
+  "title": "The Shawshank Redemption",
+  "year": 1700,
+  "director": "Frank Darabont",
+  "duration": 142,
+  "poster": "https://i.ebayimg.com/images/g/4goAAOSwMyBe7hnQ/s-l1200.webp",
+  "genre": ["Drama"],
+  "rate": 9.3
+}
+
+### recuperar una pelicula por id
+
+get http://localhost:1234/movies/{id}
+
+### recuperar una pelicula pro genero
+@genre=action
+
+get http://localhost:1234/movies?genre={{genre}}
+
+### eliminar una pelicula
+
+delete http://localhost:1234/movies/{id}
+
+### actualizar una pelicula
+
+PATCH  http://localhost:1234/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3
+Content-Type: application/json
+
+{ 
+  "year": 1993
+}
