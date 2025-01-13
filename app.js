@@ -113,7 +113,7 @@ app.get('/', (req, res) => {
       return res.json(movieUpdate)
    })
 
-   pp.delete('/movies/:id', (req, res) => {
+   app.delete('/movies/:id', (req, res) => {
     const { id } = req.params
     const movieIndex = movies.findIndex(movie => movie.id === id)
   
